@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amara Johnson · Brandlete Profile</title>
+<meta name="description" content="Amara Johnson — Point Guard, Lightning Basketball. Class of 2027. Athlete profile powered by Brandlete." />
+<meta property="og:title" content="Amara Johnson · Brandlete Profile" />
+<meta property="og:description" content="Point Guard · Lightning Basketball · Class of 2027 · Garden City, NY" />
+<meta property="og:image" content="https://brandlete.makeacompany.ai/img/og-card.png" />
+<link rel="icon" type="image/png" href="brandlete-favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #060912;
+  --bg-2:       #0a0f1f;
+  --card:       #0f1530;
+  --card-2:     #131a36;
+  --rail:       #080d1c;
+  --border:     #1c2444;
+  --border-2:   #2a3360;
+  --ink:        #f1f5fb;
+  --ink-2:      #c1cae0;
+  --ink-3:      #8d99b6;
+  --ink-soft:   #6b7794;
+  --brand:      #4d9eff;
+  --brand-2:    #00CCFF;
+  --brand-deep: #2563eb;
+  --brand-soft: rgba(77,158,255,0.12);
+  --success:    #22c55e;
+  --warn:       #f59e0b;
+  --danger:     #ef4444;
+  --hero-grad:  linear-gradient(135deg, #1a2c5c 0%, #14224a 55%, #0b1530 100%);
+  --maxw:       1220px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--rail);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 28px; }
+.nav-profile-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-3);
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px 4px 8px;
+}
+.nav-profile-tag .avatar-xs {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, #4d9eff, #00CCFF);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; border: none; transition: opacity 0.15s; }
+.btn:hover { opacity: 0.88; }
+.btn-primary { background: linear-gradient(135deg, #2196f3, #1b7de0); color: #fff; }
+.btn-ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--border-2); }
+.btn-success { background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; }
+.btn-sm { font-size: 12px; padding: 5px 11px; }
+
+/* ── Hero ── */
+.hero {
+  background: var(--hero-grad);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 32px 24px 0;
+}
+.hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.hero-top {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.avatar-ring {
+  width: 96px; height: 96px; border-radius: 50%;
+  border: 3px solid var(--brand-2);
+  overflow: hidden;
+  background: var(--card-2);
+  display: flex; align-items: center; justify-content: center;
+}
+.avatar-ring svg { width: 56px; height: 56px; opacity: 0.35; }
+.avatar-badge {
+  position: absolute; bottom: 2px; right: 2px;
+  background: var(--success);
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+}
+.avatar-badge::after { content: ''; width: 7px; height: 7px; background: #fff; border-radius: 50%; }
+
+.hero-info { flex: 1; min-width: 0; }
+.hero-name {
+  font-size: 28px; font-weight: 800; color: #fff;
+  letter-spacing: -0.5px; line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin-bottom: 14px;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  background: rgba(255,255,255,0.10); color: #fff;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.pill-cyan { background: rgba(0,204,255,0.15); color: var(--brand-2); border-color: rgba(0,204,255,0.25); }
+.pill-blue { background: rgba(77,158,255,0.15); color: var(--brand); border-color: rgba(77,158,255,0.25); }
+.pill-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.25); }
+.pill .icon { font-style: normal; font-size: 13px; }
+
+.hero-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  font-size: 12.5px; color: rgba(255,255,255,0.6);
+}
+.hero-meta span { display: flex; align-items: center; gap: 4px; }
+.hero-meta .sep { opacity: 0.3; }
+.hero-socials { display: flex; gap: 6px; margin-left: 4px; }
+.social-icon {
+  width: 26px; height: 26px; border-radius: 6px;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.14);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  transition: background 0.15s;
+}
+.social-icon:hover { background: rgba(255,255,255,0.2); }
+.social-icon svg { width: 13px; height: 13px; fill: #fff; }
+
+.hero-actions { display: flex; align-items: center; gap: 10px; padding-top: 4px; }
+.link-hudl { font-size: 12.5px; color: rgba(255,255,255,0.55); text-decoration: none; display: flex; align-items: center; gap: 4px; }
+.link-hudl:hover { color: rgba(255,255,255,0.85); }
+
+/* ── Tabs ── */
+.tabs {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 20px;
+}
+.tab {
+  padding: 12px 18px; font-size: 13.5px; font-weight: 600;
+  color: rgba(255,255,255,0.5); cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+.tab.active { color: #fff; border-bottom-color: var(--brand-2); }
+.tab:hover:not(.active) { color: rgba(255,255,255,0.75); }
+
+/* ── Layout ── */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .col-right { order: -1; }
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.card:last-child { margin-bottom: 0; }
+.card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.card-title {
+  font-size: 13px; font-weight: 700; color: var(--ink);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.card-link { font-size: 12px; color: var(--brand); text-decoration: none; font-weight: 600; }
+.card-link:hover { text-decoration: underline; }
+
+/* ── Featured Videos ── */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.video-thumb {
+  border-radius: 10px; overflow: hidden;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.video-thumb:hover { transform: translateY(-2px); border-color: var(--brand); }
+.video-img {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #0d1a42, #162050);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.video-play {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(0,204,255,0.85);
+  display: flex; align-items: center; justify-content: center;
+}
+.video-play svg { width: 14px; height: 14px; fill: #fff; margin-left: 2px; }
+.video-court {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.12;
+}
+.video-meta { padding: 8px 10px; }
+.video-title { font-size: 11.5px; font-weight: 600; color: var(--ink-2); line-height: 1.3; }
+.video-sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 2px; }
+
+/* ── Season table ── */
+.season-table { width: 100%; border-collapse: collapse; }
+.season-table th {
+  text-align: left; font-size: 10.5px; font-weight: 700;
+  color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 0 0 8px; border-bottom: 1px solid var(--border);
+}
+.season-table td {
+  padding: 10px 0; font-size: 12.5px; color: var(--ink-2);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.season-table tr:last-child td { border-bottom: none; }
+.season-table td:first-child { color: var(--ink); font-weight: 600; }
+.stat-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.stat-chip {
+  font-size: 11px; padding: 2px 7px; border-radius: 6px;
+  background: var(--brand-soft); color: var(--brand); font-weight: 600;
+}
+
+/* ── Academics ── */
+.acad-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.acad-box {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.acad-val { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1; }
+.acad-val-sm { font-size: 18px; }
+.acad-label { font-size: 10.5px; color: var(--ink-soft); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── Teams ── */
+.team-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.team-row:last-child { border-bottom: none; padding-bottom: 0; }
+.team-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(135deg, #1a2c5c, #0f1a3a);
+  border: 1px solid var(--border-2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px;
+}
+.team-info { flex: 1; min-width: 0; }
+.team-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.team-sub { font-size: 11.5px; color: var(--ink-soft); margin-top: 1px; }
+.team-date { font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
+
+/* ── Working On ── */
+.working-list { list-style: none; }
+.working-list li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; color: var(--ink-2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.working-list li:last-child { border-bottom: none; }
+.working-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--brand-2);
+  flex-shrink: 0; margin-top: 5px;
+}
+
+/* ── Loss & Media ── */
+.media-card {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px;
+}
+.media-logo { width: 44px; height: 44px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+.media-logo img { width: 100%; height: 100%; object-fit: contain; }
+.media-text { flex: 1; min-width: 0; }
+.media-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.media-sub { font-size: 11.5px; color: var(--ink-soft); margin-top: 2px; }
+
+/* ── Current Season (right col) ── */
+.season-header {
+  background: linear-gradient(135deg, #1a2c5c, #0f1a3a);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border-2);
+}
+.season-title { font-size: 12px; font-weight: 700; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.season-sub { font-size: 12px; color: var(--ink-soft); }
+.season-sub strong { color: var(--brand-2); }
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin-bottom: 14px;
+}
+.stat-box {
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.stat-val { font-size: 22px; font-weight: 800; color: var(--ink); line-height: 1; }
+.stat-label { font-size: 10px; color: var(--ink-soft); margin-top: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.stat-bar-row { margin-bottom: 10px; }
+.stat-bar-label { display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 4px; }
+.stat-bar-label span:first-child { color: var(--ink-3); font-weight: 600; }
+.stat-bar-label span:last-child { color: var(--ink); font-weight: 700; }
+.stat-bar-track { height: 5px; background: var(--card-2); border-radius: 3px; overflow: hidden; }
+.stat-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); }
+
+/* ── Achievements ── */
+.achv-list { display: flex; flex-direction: column; gap: 8px; }
+.achv-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px;
+}
+.achv-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.achv-icon.gold { background: rgba(245,158,11,0.15); }
+.achv-icon.blue { background: rgba(77,158,255,0.15); }
+.achv-icon.green { background: rgba(34,197,94,0.15); }
+.achv-text { flex: 1; }
+.achv-name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+.achv-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
+
+/* ── Contact ── */
+.contact-note {
+  font-size: 12.5px; color: var(--ink-3); line-height: 1.5;
+  margin-bottom: 14px;
+}
+.contact-email {
+  font-size: 12.5px; color: var(--brand); font-weight: 600;
+  display: flex; align-items: center; gap: 5px; margin-bottom: 14px;
+  text-decoration: none;
+}
+.contact-email:hover { text-decoration: underline; }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.footer a { color: var(--brand); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="nav">
+  <a href="https://brandlete.com" class="nav-logo">
+    <img src="brandlete-logo-dark.png" alt="Brandlete" />
+  </a>
+  <div class="nav-profile-tag">
+    <div class="avatar-xs">AJ</div>
+    Amara Johnson · Profile
+  </div>
+  <div class="nav-right">
+    <a href="https://brandlete.com" class="btn btn-ghost btn-sm">View Dashboard</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+
+      <!-- Avatar -->
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <!-- Basketball player silhouette SVG placeholder -->
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="22" r="12" fill="white"/>
+            <path d="M16 70c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="white"/>
+            <circle cx="40" cy="55" r="6" fill="rgba(0,204,255,0.5)"/>
+          </svg>
+        </div>
+        <div class="avatar-badge"></div>
+      </div>
+
+      <!-- Info -->
+      <div class="hero-info">
+        <div class="hero-name">Amara Johnson</div>
+        <div class="hero-tags">
+          <span class="pill pill-cyan"><i class="icon">🏀</i> Point Guard</span>
+          <span class="pill pill-blue">Class of 2027</span>
+          <span class="pill pill-green">Uncommitted</span>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Garden City, NY</span>
+          <span class="sep">·</span>
+          <span>Age 16</span>
+          <span class="sep">·</span>
+          <span>5'7"</span>
+          <span class="sep">·</span>
+          <span>165 lbs</span>
+          <div class="hero-socials">
+            <!-- Instagram -->
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+            <!-- Twitter/X -->
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.9-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:12px">
+          <a href="mailto:contact@lightningbasketball.net" class="btn btn-success btn-sm">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Send Email
+          </a>
+          <a href="https://hudl.com" class="link-hudl" target="_blank" rel="noopener">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Film on Hudl
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <a class="tab active" href="#">Home</a>
+      <a class="tab" href="#">Film Stats</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Layout ── -->
+<div class="layout">
+
+  <!-- Left Column -->
+  <div class="col-left">
+
+    <!-- Featured Videos -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Featured Videos</div>
+        <a href="#" class="card-link">View All</a>
+      </div>
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-thumb">
+          <div class="video-img" style="background:linear-gradient(135deg,#0d1a42,#0a2560);">
+            <div class="video-court">
+              <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/>
+                <circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/>
+                <line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="video-play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="video-meta">
+            <div class="video-title">Game Film — Lightning vs. NY Drive</div>
+            <div class="video-sub">1.2k views · 2024 AAU Season</div>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-thumb">
+          <div class="video-img" style="background:linear-gradient(135deg,#101e50,#0c1a40);">
+            <div class="video-court">
+              <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/><line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/></svg>
+            </div>
+            <div class="video-play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="video-meta">
+            <div class="video-title">Highlights — Garden City High School</div>
+            <div class="video-sub">876 views · Winter 2024</div>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-thumb">
+          <div class="video-img" style="background:linear-gradient(135deg,#0a1840,#0f1e50);">
+            <div class="video-court">
+              <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/><line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/></svg>
+            </div>
+            <div class="video-play">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+          <div class="video-meta">
+            <div class="video-title">Full Match — Lightning National Showcase</div>
+            <div class="video-sub">2.4k views · July 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Previous Seasons -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Previous Seasons</div>
+        <a href="#" class="card-link">View All</a>
+      </div>
+      <table class="season-table">
+        <thead>
+          <tr>
+            <th style="width:110px">Year</th>
+            <th>Team</th>
+            <th style="width:180px">Avg Stats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Junior Year 2024</td>
+            <td>Lightning Basketball<br><span style="font-size:11px;color:var(--ink-soft)">AAU · Garden City, NY</span></td>
+            <td>
+              <div class="stat-chips">
+                <span class="stat-chip">17.8 PPG</span>
+                <span class="stat-chip">6.1 APG</span>
+                <span class="stat-chip">4.0 RPG</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Sophomore 2023</td>
+            <td>Lightning Basketball<br><span style="font-size:11px;color:var(--ink-soft)">AAU · Garden City, NY</span></td>
+            <td>
+              <div class="stat-chips">
+                <span class="stat-chip">13.4 PPG</span>
+                <span class="stat-chip">4.8 APG</span>
+                <span class="stat-chip">3.2 RPG</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Freshman 2022</td>
+            <td>Lightning Academy<br><span style="font-size:11px;color:var(--ink-soft)">Developmental · LI</span></td>
+            <td>
+              <div class="stat-chips">
+                <span class="stat-chip">9.2 PPG</span>
+                <span class="stat-chip">3.1 APG</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Academics -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Academics</div>
+      </div>
+      <div class="acad-row">
+        <div class="acad-box">
+          <div class="acad-val">3.8</div>
+          <div class="acad-label">GPA</div>
+        </div>
+        <div class="acad-box">
+          <div class="acad-val acad-val-sm">1240</div>
+          <div class="acad-label">SAT Score</div>
+        </div>
+        <div class="acad-box">
+          <div class="acad-val acad-val-sm">NHS</div>
+          <div class="acad-label">Honor Society</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teams -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Teams</div>
+      </div>
+      <div class="team-row">
+        <div class="team-icon">⚡</div>
+        <div class="team-info">
+          <div class="team-name">Lightning Basketball</div>
+          <div class="team-sub">AAU · Garden City, NY · Girls 16U Gold</div>
+        </div>
+        <div class="team-date">Since 2021</div>
+      </div>
+      <div class="team-row">
+        <div class="team-icon">🏫</div>
+        <div class="team-info">
+          <div class="team-name">Garden City High School</div>
+          <div class="team-sub">Varsity Girls Basketball · Captain</div>
+        </div>
+        <div class="team-date">2022–Present</div>
+      </div>
+    </div>
+
+    <!-- What I'm Working On -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">What I'm Working On</div>
+      </div>
+      <ul class="working-list">
+        <li><span class="working-dot"></span>Off-hand finishing at the rim and floater development</li>
+        <li><span class="working-dot"></span>3-point consistency off the dribble pull-up (currently 37% — targeting 40%+)</li>
+        <li><span class="working-dot"></span>Pick-and-roll read progression and mid-range shot off PnR</li>
+        <li><span class="working-dot"></span>Defensive footwork and staying attached on ball screens</li>
+        <li><span class="working-dot"></span>College outreach and campus visits — targeting D1 programs</li>
+      </ul>
+    </div>
+
+    <!-- Loss & Media -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Loss &amp; Media</div>
+      </div>
+      <div class="media-card" style="margin-bottom:10px">
+        <div class="media-logo" style="background:#0f1530;border:1px solid var(--border);border-radius:8px;padding:6px;">
+          <img src="brandlete-logo-dark.png" alt="Brandlete" style="height:32px;width:auto;display:block;margin:auto;" />
+        </div>
+        <div class="media-text">
+          <div class="media-name">Brandlete</div>
+          <div class="media-sub">Athlete development, structured. Full profile on Brandlete.</div>
+        </div>
+      </div>
+      <div class="media-card">
+        <div class="media-logo" style="background:linear-gradient(135deg,#1a2c5c,#0f1a3a);border:1px solid var(--border-2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;width:44px;height:44px;flex-shrink:0;">⚡</div>
+        <div class="media-text">
+          <div class="media-name">Lightning Basketball</div>
+          <div class="media-sub"><a href="https://lightningbasketball.net" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:none;">lightningbasketball.net</a> · One of the nation's largest AAU organizations</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /col-left -->
+
+  <!-- Right Column -->
+  <div class="col-right">
+
+    <!-- Current Season -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Current Season</div>
+        <a href="#" class="card-link">View All</a>
+      </div>
+      <div class="season-header">
+        <div class="season-title">Senior Year 2024–25</div>
+        <div class="season-sub"><strong>Lightning Basketball</strong> · Girls 16U Gold</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-val">18.3</div>
+          <div class="stat-label">PPG</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">6.8</div>
+          <div class="stat-label">APG</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">4.2</div>
+          <div class="stat-label">RPG</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">2.1</div>
+          <div class="stat-label">SPG</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">22</div>
+          <div class="stat-label">Games</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">+18</div>
+          <div class="stat-label">+/−</div>
+        </div>
+      </div>
+
+      <!-- Shooting splits -->
+      <div style="margin-top:4px">
+        <div class="stat-bar-row">
+          <div class="stat-bar-label"><span>FG%</span><span>43.5%</span></div>
+          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:43.5%"></div></div>
+        </div>
+        <div class="stat-bar-row">
+          <div class="stat-bar-label"><span>3P%</span><span>37.2%</span></div>
+          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:37.2%"></div></div>
+        </div>
+        <div class="stat-bar-row">
+          <div class="stat-bar-label"><span>FT%</span><span>81.4%</span></div>
+          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:81.4%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Achievements</div>
+      </div>
+      <div class="achv-list">
+        <div class="achv-row">
+          <div class="achv-icon gold">🏆</div>
+          <div class="achv-text">
+            <div class="achv-name">All-Conference (2024)</div>
+            <div class="achv-sub">Nassau County Girls Basketball</div>
+          </div>
+        </div>
+        <div class="achv-row">
+          <div class="achv-icon blue">⭐</div>
+          <div class="achv-text">
+            <div class="achv-name">Team Captain</div>
+            <div class="achv-sub">Garden City High School · 2024–25</div>
+          </div>
+        </div>
+        <div class="achv-row">
+          <div class="achv-icon green">📚</div>
+          <div class="achv-text">
+            <div class="achv-name">Academic All-State</div>
+            <div class="achv-sub">NYSPHSAA · GPA 3.8+</div>
+          </div>
+        </div>
+        <div class="achv-row">
+          <div class="achv-icon gold">🥇</div>
+          <div class="achv-text">
+            <div class="achv-name">Lightning 16U Gold</div>
+            <div class="achv-sub">AAU Tournament Champion · Summer 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Contact</div>
+      </div>
+      <p class="contact-note">
+        Interested in recruiting Amara or learning more about her development? Reach out directly through Brandlete or Lightning Basketball.
+      </p>
+      <a href="mailto:karen@lightningbasketball.net" class="contact-email">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        karen@lightningbasketball.net
+      </a>
+      <a href="mailto:karen@lightningbasketball.net" class="btn btn-success" style="width:100%;justify-content:center;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Send Recruiting Inquiry
+      </a>
+    </div>
+
+  </div><!-- /col-right -->
+
+</div><!-- /layout -->
+
+<footer class="footer">
+  © 2025 Brandlete, Inc. · <a href="https://brandlete.com">brandlete.com</a> · <a href="https://brandlete.com/privacy.html">Privacy</a> · <a href="https://brandlete.com/terms.html">Terms</a>
+</footer>
+
+</body>
+</html>
