@@ -26,12 +26,8 @@
   --ink-soft:   #6b7794;
   --brand:      #4d9eff;
   --brand-2:    #00CCFF;
-  --brand-deep: #2563eb;
   --brand-soft: rgba(77,158,255,0.12);
   --success:    #22c55e;
-  --warn:       #f59e0b;
-  --danger:     #ef4444;
-  --hero-grad:  linear-gradient(135deg, #1a2c5c 0%, #14224a 55%, #0b1530 100%);
   --maxw:       1220px;
   color-scheme: dark;
 }
@@ -44,321 +40,307 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Nav */
+/* ─── Nav ─── */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: var(--rail);
-  border-bottom: 1px solid var(--border);
+  background: var(--rail); border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 56px;
+  padding: 0 28px; height: 52px;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo img { height: 28px; }
-.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 26px; }
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
-  cursor: pointer; text-decoration: none; border: none;
-  transition: opacity 0.15s, transform 0.1s;
+  cursor: pointer; text-decoration: none; border: none; transition: opacity 0.15s;
 }
-.btn:hover { opacity: 0.88; }
-.btn-primary { background: linear-gradient(135deg, #2196f3, #1b7de0); color: #fff; }
+.btn:hover { opacity: 0.85; }
 .btn-ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--border-2); }
-.btn-share { background: linear-gradient(135deg, var(--brand-2), var(--brand)); color: #000; font-weight: 700; }
+.btn-share {
+  background: linear-gradient(135deg, var(--brand-2), #0099cc);
+  color: #001a2e; font-weight: 700; font-size: 13px;
+}
 .btn-success { background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; }
 .btn-sm { font-size: 12px; padding: 5px 12px; }
 
-/* Hero */
+/* ─── Hero ─── */
 .hero {
-  background: var(--hero-grad);
+  background: linear-gradient(135deg, #1a2c5c 0%, #14224a 55%, #0b1530 100%);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 32px 24px 0;
+  padding: 28px 28px 0;
 }
 .hero-inner { max-width: var(--maxw); margin: 0 auto; }
 
 .hero-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  padding-bottom: 24px;
+  display: flex; align-items: flex-start; gap: 24px; padding-bottom: 20px;
 }
 
-/* Large rectangular portrait */
+/* Large portrait */
 .hero-photo {
-  flex-shrink: 0;
-  width: 168px;
-  height: 220px;
-  border-radius: 14px;
+  flex-shrink: 0; width: 164px; height: 248px;
+  border-radius: 12px;
   border: 2px solid var(--brand-2);
   overflow: hidden;
-  background: var(--card-2);
-  box-shadow: 0 0 28px rgba(0,204,255,0.18);
+  background: #0d1938;
+  box-shadow: 0 0 32px rgba(0,204,255,0.20), 0 8px 32px rgba(0,0,0,0.5);
 }
-.hero-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
-}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
-.hero-info { flex: 1; min-width: 0; padding-top: 4px; }
+.hero-info { flex: 1; min-width: 0; padding-top: 2px; }
 
 .hero-name {
-  font-size: 32px; font-weight: 800; color: #fff;
-  letter-spacing: -0.6px; line-height: 1.1;
-  margin-bottom: 10px;
+  font-size: 34px; font-weight: 800; color: #fff;
+  letter-spacing: -0.7px; line-height: 1.05; margin-bottom: 10px;
 }
-.hero-tags {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
-  margin-bottom: 12px;
-}
+
+.hero-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
 .pill {
   display: inline-flex; align-items: center; gap: 4px;
-  padding: 4px 11px; border-radius: 20px; font-size: 12px; font-weight: 600;
-  background: rgba(255,255,255,0.10); color: #fff;
-  border: 1px solid rgba(255,255,255,0.14);
+  padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
 }
-.pill-cyan { background: rgba(0,204,255,0.15); color: var(--brand-2); border-color: rgba(0,204,255,0.3); }
-.pill-blue { background: rgba(77,158,255,0.15); color: var(--brand); border-color: rgba(77,158,255,0.3); }
-.pill-green { background: rgba(34,197,94,0.15); color: var(--success); border-color: rgba(34,197,94,0.25); }
+.pill-pos   { background: rgba(0,204,255,0.15); color: var(--brand-2); border: 1px solid rgba(0,204,255,0.3); }
+.pill-pos2  { background: rgba(77,158,255,0.15); color: var(--brand);  border: 1px solid rgba(77,158,255,0.3); }
+.pill-green { background: rgba(34,197,94,0.15);  color: var(--success); border: 1px solid rgba(34,197,94,0.25); }
 
 .hero-bio {
-  font-size: 13.5px; color: rgba(255,255,255,0.72);
-  line-height: 1.6; margin-bottom: 16px;
-  max-width: 520px;
+  font-size: 13.5px; color: rgba(255,255,255,0.68); line-height: 1.6;
+  margin-bottom: 16px; max-width: 500px;
 }
 
-.hero-actions {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 16px; flex-wrap: wrap;
-}
-.social-icons { display: flex; gap: 7px; }
-.social-icon {
+.hero-actions { display: flex; align-items: center; gap: 9px; margin-bottom: 14px; flex-wrap: wrap; }
+
+.socials { display: flex; gap: 7px; }
+.soc {
   width: 30px; height: 30px; border-radius: 7px;
   background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.14);
   display: flex; align-items: center; justify-content: center; cursor: pointer;
   transition: background 0.15s;
 }
-.social-icon:hover { background: rgba(255,255,255,0.2); }
-.social-icon svg { width: 14px; height: 14px; fill: #fff; }
+.soc:hover { background: rgba(255,255,255,0.22); }
+.soc svg { width: 14px; height: 14px; fill: #fff; }
 
-.hero-meta-bar {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-  font-size: 12.5px; color: rgba(255,255,255,0.55);
+.hero-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  font-size: 12.5px; color: rgba(255,255,255,0.52);
 }
-.hero-meta-bar .meta-item { display: flex; align-items: center; gap: 5px; }
-.hero-meta-bar .sep { color: rgba(255,255,255,0.2); }
-.meta-item strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+.hero-meta strong { color: rgba(255,255,255,0.82); font-weight: 600; }
+.hero-meta .dot { color: rgba(255,255,255,0.2); }
 
-/* Tabs */
+/* ─── Tabs ─── */
 .tabs {
   max-width: var(--maxw); margin: 0 auto;
-  display: flex; gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 4px;
+  display: flex; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 6px;
 }
 .tab {
-  padding: 12px 18px; font-size: 13.5px; font-weight: 600;
-  color: rgba(255,255,255,0.5); cursor: pointer;
-  border-bottom: 2px solid transparent;
+  padding: 11px 18px; font-size: 13.5px; font-weight: 600;
+  color: rgba(255,255,255,0.48); cursor: pointer;
+  border-bottom: 2px solid transparent; text-decoration: none;
   transition: color 0.15s, border-color 0.15s;
-  text-decoration: none;
 }
 .tab.active { color: #fff; border-bottom-color: var(--brand-2); }
 .tab:hover:not(.active) { color: rgba(255,255,255,0.75); }
 
-/* Layout */
+/* ─── Two-column layout ─── */
 .layout {
   max-width: var(--maxw); margin: 0 auto;
-  padding: 24px 24px 60px;
+  padding: 22px 28px 60px;
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 20px;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
 }
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; }
-  .col-right { order: -1; }
-  .hero-photo { width: 120px; height: 158px; }
+  .hero-photo { width: 120px; height: 182px; }
   .hero-name { font-size: 26px; }
 }
 
-/* Cards */
+/* ─── Cards ─── */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 16px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px; margin-bottom: 14px;
 }
 .card:last-child { margin-bottom: 0; }
-.card-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 16px;
-}
-.card-title {
-  font-size: 12px; font-weight: 700; color: var(--ink-2);
-  text-transform: uppercase; letter-spacing: 0.07em;
-}
+.card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.card-title { font-size: 12px; font-weight: 700; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.07em; }
 .card-link { font-size: 12px; color: var(--brand); text-decoration: none; font-weight: 600; }
 .card-link:hover { text-decoration: underline; }
 
-/* Videos */
-.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+/* ─── Featured Videos ─── */
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
 .video-thumb {
   border-radius: 10px; overflow: hidden;
-  background: var(--card-2); border: 1px solid var(--border);
-  cursor: pointer; transition: transform 0.15s, border-color 0.15s;
+  border: 1px solid var(--border); cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
 }
 .video-thumb:hover { transform: translateY(-2px); border-color: var(--brand); }
 .video-img {
-  aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #0d1a42, #162050);
-  display: flex; align-items: center; justify-content: center; position: relative;
+  aspect-ratio: 16/9; position: relative; overflow: hidden;
+  background: #0a1230;
+  display: flex; align-items: center; justify-content: center;
+}
+.video-img img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  opacity: 0.6; filter: saturate(1.2) brightness(0.85);
+}
+.video-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6,9,18,0.7) 0%, transparent 60%);
 }
 .video-play {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(0,204,255,0.85);
+  position: relative; z-index: 1;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(0,204,255,0.9);
   display: flex; align-items: center; justify-content: center;
-  z-index: 1;
 }
-.video-play svg { width: 13px; height: 13px; fill: #fff; margin-left: 2px; }
-.video-court { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0.1; }
-.video-meta { padding: 8px 10px; }
+.video-play svg { width: 12px; height: 12px; fill: #fff; margin-left: 2px; }
+.video-meta { padding: 8px 10px; background: var(--card-2); }
 .video-title { font-size: 11.5px; font-weight: 600; color: var(--ink-2); line-height: 1.3; }
 .video-sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 2px; }
 
-/* Previous Seasons */
-.season-card {
-  background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 11px; padding: 14px 16px;
-  margin-bottom: 10px; position: relative; overflow: hidden;
+/* ─── Previous Seasons (table rows) ─── */
+.season-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
 }
-.season-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px; background: linear-gradient(180deg, var(--brand-2), var(--brand));
-  border-radius: 3px 0 0 3px;
-}
-.season-card:last-child { margin-bottom: 0; }
-.season-card-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
-.season-year { font-size: 13px; font-weight: 700; color: var(--ink); }
-.season-team { font-size: 11.5px; color: var(--ink-soft); }
-.season-stats { display: flex; gap: 16px; }
-.s-stat { text-align: center; }
-.s-stat-val { font-size: 20px; font-weight: 800; color: var(--ink); line-height: 1; }
-.s-stat-label { font-size: 10px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+.season-row:last-child { border-bottom: none; padding-bottom: 0; }
+.season-row:first-child { padding-top: 0; }
+.season-left { min-width: 0; flex: 1; }
+.season-year { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.season-team { font-size: 11px; color: var(--ink-soft); }
+.season-stats { display: flex; gap: 16px; flex-shrink: 0; }
+.ss { text-align: center; }
+.ss-val { font-size: 17px; font-weight: 800; color: var(--ink); line-height: 1; }
+.ss-label { font-size: 9.5px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
 
-/* Academics */
-.acad-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+/* ─── Academics ─── */
+.acad-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-bottom: 16px; }
 .acad-box {
   background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 10px; padding: 14px; text-align: center;
+  border-radius: 10px; padding: 14px 8px; text-align: center;
 }
 .acad-val { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1; }
 .acad-label { font-size: 10px; color: var(--ink-soft); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.acad-section-title {
+  font-size: 11px; font-weight: 700; color: var(--ink-3);
+  text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;
+}
 .honor-list { list-style: none; }
 .honor-item {
   display: flex; align-items: center; gap: 8px;
   font-size: 12.5px; color: var(--ink-2);
-  padding: 7px 0; border-bottom: 1px solid var(--border);
+  padding: 6px 0; border-bottom: 1px solid var(--border);
 }
 .honor-item:last-child { border-bottom: none; padding-bottom: 0; }
-.honor-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); flex-shrink: 0; }
+.honor-check { color: var(--success); font-size: 13px; flex-shrink: 0; }
+
+/* ─── What I'm Working On ─── */
+.working-list { list-style: none; }
+.working-item {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12.5px; color: var(--ink-2); line-height: 1.45;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.working-item:last-child { border-bottom: none; padding-bottom: 0; }
+.w-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 5px; }
+
+/* ─── RIGHT COLUMN ─── */
+
+/* Current Season */
+.season-banner {
+  background: linear-gradient(135deg, #1e3366, #111d40);
+  border: 1px solid var(--border-2); border-radius: 10px;
+  padding: 11px 14px; margin-bottom: 13px;
+}
+.sb-label { font-size: 11px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 2px; }
+.sb-team { font-size: 13px; color: var(--ink-2); }
+.sb-team strong { color: var(--brand-2); }
+
+.big-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.bs {
+  background: var(--card-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 6px; text-align: center;
+}
+.bs-val { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1; }
+.bs-label { font-size: 10px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
+
+/* Percentage row with player photos between */
+.pct-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 4px; margin-top: 2px;
+}
+.pct-item { text-align: center; flex: 1; }
+.pct-val { font-size: 20px; font-weight: 800; color: var(--brand-2); line-height: 1; }
+.pct-label { font-size: 9.5px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
+.pct-photo {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 2px solid var(--border-2);
+  overflow: hidden; flex-shrink: 0; background: var(--card-2);
+}
+.pct-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 
 /* Teams */
 .team-row {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
 }
+.team-row:first-child { padding-top: 0; }
 .team-row:last-child { border-bottom: none; padding-bottom: 0; }
 .team-icon {
-  width: 40px; height: 40px; border-radius: 10px;
+  width: 36px; height: 36px; border-radius: 9px;
   background: linear-gradient(135deg, #1a2c5c, #0f1a3a);
   border: 1px solid var(--border-2);
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; font-size: 20px;
+  flex-shrink: 0; font-size: 18px;
 }
 .team-info { flex: 1; min-width: 0; }
-.team-name { font-size: 13px; font-weight: 700; color: var(--ink); }
-.team-sub { font-size: 11.5px; color: var(--ink-soft); margin-top: 2px; }
+.team-name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+.team-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
 .team-date { font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
-
-/* Working On */
-.working-list { list-style: none; }
-.working-list li {
-  display: flex; align-items: flex-start; gap: 8px;
-  font-size: 13px; color: var(--ink-2);
-  padding: 7px 0; border-bottom: 1px solid var(--border); line-height: 1.45;
-}
-.working-list li:last-child { border-bottom: none; }
-.working-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); flex-shrink: 0; margin-top: 5px; }
 
 /* Links & Media */
 .media-row {
-  display: flex; align-items: center; gap: 12px;
-  background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 10px; padding: 12px 14px; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
 }
-.media-row:last-child { margin-bottom: 0; }
+.media-row:first-child { padding-top: 0; }
+.media-row:last-child { border-bottom: none; padding-bottom: 0; }
 .media-icon {
-  width: 40px; height: 40px; border-radius: 9px;
-  flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 20px;
+  width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; border: 1px solid var(--border);
 }
-.media-text { flex: 1; min-width: 0; }
-.media-name { font-size: 13px; font-weight: 700; color: var(--ink); }
-.media-sub { font-size: 11.5px; color: var(--ink-soft); margin-top: 2px; }
+.media-name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+.media-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
 .media-sub a { color: var(--brand); text-decoration: none; }
 .media-sub a:hover { text-decoration: underline; }
 
-/* Current Season (right col) */
-.season-banner {
-  background: linear-gradient(135deg, #1a2c5c, #0f1a3a);
-  border: 1px solid var(--border-2);
-  border-radius: 10px; padding: 12px 14px; margin-bottom: 14px;
-}
-.season-banner-label { font-size: 11px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 2px; }
-.season-banner-team { font-size: 13px; color: var(--ink-2); }
-.season-banner-team strong { color: var(--brand-2); }
-
-.big-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
-.big-stat {
-  background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 10px; padding: 14px 8px; text-align: center;
-}
-.big-stat-val { font-size: 26px; font-weight: 800; color: var(--ink); line-height: 1; }
-.big-stat-label { font-size: 10px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
-
-.pct-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 4px; }
-.pct-box {
-  background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 10px; padding: 12px 8px; text-align: center;
-}
-.pct-val { font-size: 20px; font-weight: 800; color: var(--brand-2); line-height: 1; }
-.pct-label { font-size: 10px; color: var(--ink-soft); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
-
 /* Achievements */
-.achv-list { display: flex; flex-direction: column; gap: 8px; }
+.achv-list { display: flex; flex-direction: column; gap: 7px; }
 .achv-row {
   display: flex; align-items: center; gap: 10px;
   background: var(--card-2); border: 1px solid var(--border);
-  border-radius: 10px; padding: 10px 12px;
+  border-radius: 10px; padding: 9px 11px;
 }
 .achv-icon {
-  width: 34px; height: 34px; border-radius: 8px;
+  width: 32px; height: 32px; border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 17px; flex-shrink: 0;
+  font-size: 16px; flex-shrink: 0;
 }
-.achv-icon.gold { background: rgba(245,158,11,0.15); }
-.achv-icon.blue { background: rgba(77,158,255,0.15); }
-.achv-icon.green { background: rgba(34,197,94,0.15); }
-.achv-icon.cyan { background: rgba(0,204,255,0.12); }
-.achv-text { flex: 1; }
-.achv-name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
-.achv-sub { font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
+.gold  { background: rgba(245,158,11,0.15); }
+.blue  { background: rgba(77,158,255,0.15); }
+.green { background: rgba(34,197,94,0.15);  }
+.cyan  { background: rgba(0,204,255,0.12);  }
+.achv-name { font-size: 12px; font-weight: 700; color: var(--ink); }
+.achv-sub  { font-size: 10.5px; color: var(--ink-soft); margin-top: 1px; }
 
 /* Contact */
-.contact-note { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; margin-bottom: 14px; }
+.contact-note { font-size: 12.5px; color: var(--ink-3); line-height: 1.55; margin-bottom: 12px; }
 
 /* Footer */
 .footer {
-  text-align: center; padding: 24px;
+  text-align: center; padding: 22px;
   border-top: 1px solid var(--border);
   font-size: 12px; color: var(--ink-soft);
 }
@@ -373,9 +355,7 @@ body {
   <a href="https://brandlete.com" class="nav-logo">
     <img src="brandlete-logo-dark.png" alt="Brandlete" />
   </a>
-  <div class="nav-right">
-    <a href="https://app.brandlete.com" class="btn btn-ghost btn-sm">View Dashboard</a>
-  </div>
+  <a href="https://app.brandlete.com" class="btn btn-ghost btn-sm">View Dashboard</a>
 </nav>
 
 <!-- Hero -->
@@ -383,18 +363,16 @@ body {
   <div class="hero-inner">
     <div class="hero-top">
 
-      <!-- Large portrait photo -->
       <div class="hero-photo">
         <img src="player-photo.png" alt="Amara Johnson" />
       </div>
 
-      <!-- Info block -->
       <div class="hero-info">
         <div class="hero-name">Amara Johnson</div>
 
-        <div class="hero-tags">
-          <span class="pill pill-cyan">🏀 Point Guard</span>
-          <span class="pill pill-blue">Shooting Guard</span>
+        <div class="hero-pills">
+          <span class="pill pill-pos">Point Guard</span>
+          <span class="pill pill-pos2">Shooting Guard</span>
           <span class="pill pill-green">Uncommitted</span>
         </div>
 
@@ -408,41 +386,38 @@ body {
             Share Profile
           </a>
           <a href="https://app.brandlete.com" class="btn btn-ghost btn-sm">Go on Dashboard</a>
-          <div class="social-icons">
-            <div class="social-icon">
+          <div class="socials">
+            <div class="soc">
               <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </div>
-            <div class="social-icon">
-              <!-- TikTok -->
+            <div class="soc">
               <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.41a8.16 8.16 0 004.77 1.52V7.49a4.85 4.85 0 01-1-.8z"/></svg>
             </div>
-            <div class="social-icon">
+            <div class="soc">
               <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.9-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </div>
-            <div class="social-icon">
-              <!-- YouTube -->
+            <div class="soc">
               <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
             </div>
           </div>
         </div>
 
-        <div class="hero-meta-bar">
-          <div class="meta-item"><strong>Lightning Basketball</strong></div>
-          <span class="sep">·</span>
-          <div class="meta-item">Class of <strong>2027</strong></div>
-          <span class="sep">·</span>
-          <div class="meta-item">Age <strong>16</strong></div>
-          <span class="sep">·</span>
-          <div class="meta-item"><strong>5'7"</strong></div>
-          <span class="sep">·</span>
-          <div class="meta-item"><strong>165 lbs</strong></div>
-          <span class="sep">·</span>
-          <div class="meta-item">📍 Garden City, NY</div>
+        <div class="hero-meta">
+          <strong>Lightning Basketball</strong>
+          <span class="dot">·</span>
+          Class of <strong>2027</strong>
+          <span class="dot">·</span>
+          Age <strong>16</strong>
+          <span class="dot">·</span>
+          <strong>5'7"</strong>
+          <span class="dot">·</span>
+          <strong>165 lbs</strong>
+          <span class="dot">·</span>
+          📍 Garden City, NY
         </div>
       </div>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs">
       <a class="tab active" href="#">Home</a>
       <a class="tab" href="#">Film &amp; Stats</a>
@@ -450,10 +425,10 @@ body {
   </div>
 </div>
 
-<!-- Main Layout -->
+<!-- Layout -->
 <div class="layout">
 
-  <!-- Left Column -->
+  <!-- ── LEFT COLUMN ── -->
   <div class="col-left">
 
     <!-- Featured Videos -->
@@ -464,10 +439,9 @@ body {
       </div>
       <div class="video-grid">
         <div class="video-thumb">
-          <div class="video-img" style="background:linear-gradient(135deg,#0d1a42,#0a2560);">
-            <div class="video-court">
-              <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/><line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/></svg>
-            </div>
+          <div class="video-img">
+            <img src="player-photo.png" alt="" />
+            <div class="video-overlay"></div>
             <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
           <div class="video-meta">
@@ -476,10 +450,9 @@ body {
           </div>
         </div>
         <div class="video-thumb">
-          <div class="video-img" style="background:linear-gradient(135deg,#101e50,#0c1a40);">
-            <div class="video-court">
-              <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/><line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/></svg>
-            </div>
+          <div class="video-img">
+            <img src="player-photo.png" alt="" style="object-position: center 20%;" />
+            <div class="video-overlay"></div>
             <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
           <div class="video-meta">
@@ -488,10 +461,9 @@ body {
           </div>
         </div>
         <div class="video-thumb">
-          <div class="video-img" style="background:linear-gradient(135deg,#0a1840,#0f1e50);">
-            <div class="video-court">
-              <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="1" y="1" width="78" height="58" rx="2" stroke="white" stroke-width="1.5" fill="none"/><circle cx="40" cy="30" r="10" stroke="white" stroke-width="1.5" fill="none"/><line x1="40" y1="1" x2="40" y2="59" stroke="white" stroke-width="1.5"/></svg>
-            </div>
+          <div class="video-img">
+            <img src="player-photo.png" alt="" style="object-position: center 40%;" />
+            <div class="video-overlay"></div>
             <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
           </div>
           <div class="video-meta">
@@ -509,78 +481,124 @@ body {
         <a href="#" class="card-link">View All</a>
       </div>
 
-      <div class="season-card">
-        <div class="season-card-head">
+      <div class="season-row">
+        <div class="season-left">
           <div class="season-year">Junior Year 2024–25</div>
-          <div class="season-team">Lightning Basketball · AAU</div>
+          <div class="season-team">Lightning Basketball · AAU · Garden City, NY</div>
         </div>
         <div class="season-stats">
-          <div class="s-stat"><div class="s-stat-val">17.8</div><div class="s-stat-label">PPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">6.1</div><div class="s-stat-label">APG</div></div>
-          <div class="s-stat"><div class="s-stat-val">4.0</div><div class="s-stat-label">RPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">2.3</div><div class="s-stat-label">SPG</div></div>
+          <div class="ss"><div class="ss-val">17.8</div><div class="ss-label">PPG</div></div>
+          <div class="ss"><div class="ss-val">6.1</div><div class="ss-label">APG</div></div>
+          <div class="ss"><div class="ss-val">4.0</div><div class="ss-label">RPG</div></div>
+          <div class="ss"><div class="ss-val">22</div><div class="ss-label">Games</div></div>
         </div>
       </div>
 
-      <div class="season-card">
-        <div class="season-card-head">
+      <div class="season-row">
+        <div class="season-left">
           <div class="season-year">Sophomore 2023–24</div>
-          <div class="season-team">Lightning Basketball · AAU</div>
+          <div class="season-team">Lightning Basketball · AAU · Garden City, NY</div>
         </div>
         <div class="season-stats">
-          <div class="s-stat"><div class="s-stat-val">13.4</div><div class="s-stat-label">PPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">4.8</div><div class="s-stat-label">APG</div></div>
-          <div class="s-stat"><div class="s-stat-val">3.2</div><div class="s-stat-label">RPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">1.8</div><div class="s-stat-label">SPG</div></div>
+          <div class="ss"><div class="ss-val">13.4</div><div class="ss-label">PPG</div></div>
+          <div class="ss"><div class="ss-val">4.8</div><div class="ss-label">APG</div></div>
+          <div class="ss"><div class="ss-val">3.2</div><div class="ss-label">RPG</div></div>
+          <div class="ss"><div class="ss-val">18</div><div class="ss-label">Games</div></div>
         </div>
       </div>
 
-      <div class="season-card">
-        <div class="season-card-head">
+      <div class="season-row">
+        <div class="season-left">
           <div class="season-year">Freshman 2022–23</div>
-          <div class="season-team">Lightning Academy · Developmental</div>
+          <div class="season-team">Lightning Academy · Developmental · Long Island</div>
         </div>
         <div class="season-stats">
-          <div class="s-stat"><div class="s-stat-val">9.2</div><div class="s-stat-label">PPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">3.1</div><div class="s-stat-label">APG</div></div>
-          <div class="s-stat"><div class="s-stat-val">2.5</div><div class="s-stat-label">RPG</div></div>
-          <div class="s-stat"><div class="s-stat-val">1.1</div><div class="s-stat-label">SPG</div></div>
+          <div class="ss"><div class="ss-val">9.2</div><div class="ss-label">PPG</div></div>
+          <div class="ss"><div class="ss-val">3.1</div><div class="ss-label">APG</div></div>
+          <div class="ss"><div class="ss-val">2.5</div><div class="ss-label">RPG</div></div>
+          <div class="ss"><div class="ss-val">11</div><div class="ss-label">Games</div></div>
         </div>
       </div>
     </div>
 
     <!-- Academics -->
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">Academics</div>
+      <div class="card-head"><div class="card-title">Academics</div></div>
+      <div class="acad-boxes">
+        <div class="acad-box"><div class="acad-val">3.85</div><div class="acad-label">GPA</div></div>
+        <div class="acad-box"><div class="acad-val" style="font-size:22px">1260</div><div class="acad-label">SAT</div></div>
+        <div class="acad-box"><div class="acad-val" style="font-size:22px">28</div><div class="acad-label">ACT</div></div>
       </div>
-      <div class="acad-row">
-        <div class="acad-box">
-          <div class="acad-val">3.85</div>
-          <div class="acad-label">GPA</div>
-        </div>
-        <div class="acad-box">
-          <div class="acad-val" style="font-size:22px">1240</div>
-          <div class="acad-label">SAT</div>
-        </div>
-        <div class="acad-box">
-          <div class="acad-val" style="font-size:22px">28</div>
-          <div class="acad-label">ACT</div>
-        </div>
-      </div>
+      <div class="acad-section-title">Academic Honors</div>
       <ul class="honor-list">
-        <li class="honor-item"><span class="honor-dot"></span>National Honor Society</li>
-        <li class="honor-item"><span class="honor-dot"></span>Academic All-State — NYSPHSAA</li>
-        <li class="honor-item"><span class="honor-dot"></span>Principal's List — 4 consecutive semesters</li>
-        <li class="honor-item"><span class="honor-dot"></span>AP Biology · AP US History</li>
+        <li class="honor-item"><span class="honor-check">✓</span> National Honor Society</li>
+        <li class="honor-item"><span class="honor-check">✓</span> Academic All-State — NYSPHSAA</li>
+        <li class="honor-item"><span class="honor-check">✓</span> Principal's List — 4 consecutive semesters</li>
+        <li class="honor-item"><span class="honor-check">✓</span> AP Biology · AP US History</li>
       </ul>
+    </div>
+
+    <!-- What I'm Working On -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">What I'm Working On</div></div>
+      <ul class="working-list">
+        <li class="working-item"><span class="w-dot"></span>Off-hand finishing at the rim and floater development</li>
+        <li class="working-item"><span class="w-dot"></span>3-point consistency off the dribble pull-up (37% → targeting 40%+)</li>
+        <li class="working-item"><span class="w-dot"></span>Pick-and-roll read progression and mid-range off PnR</li>
+        <li class="working-item"><span class="w-dot"></span>Defensive footwork — staying attached on ball screens</li>
+        <li class="working-item"><span class="w-dot"></span>College outreach and campus visits — targeting D1 programs</li>
+      </ul>
+    </div>
+
+  </div><!-- /col-left -->
+
+  <!-- ── RIGHT COLUMN ── -->
+  <div class="col-right">
+
+    <!-- Current Season -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Current Season</div>
+        <a href="#" class="card-link">View All</a>
+      </div>
+
+      <div class="season-banner">
+        <div class="sb-label">Spring 2025 · Varsity</div>
+        <div class="sb-team"><strong>Lightning Basketball</strong> (Girls 16U Gold)</div>
+      </div>
+
+      <div class="big-stats">
+        <div class="bs"><div class="bs-val">18.3</div><div class="bs-label">PPG</div></div>
+        <div class="bs"><div class="bs-val">6.1</div><div class="bs-label">RPG</div></div>
+        <div class="bs"><div class="bs-val">4.2</div><div class="bs-label">APG</div></div>
+      </div>
+
+      <!-- Percentage row with player photos between -->
+      <div class="pct-row">
+        <div class="pct-item">
+          <div class="pct-val">45%</div>
+          <div class="pct-label">FG%</div>
+        </div>
+        <div class="pct-photo">
+          <img src="player-photo.png" alt="" />
+        </div>
+        <div class="pct-item">
+          <div class="pct-val">37%</div>
+          <div class="pct-label">3P%</div>
+        </div>
+        <div class="pct-photo">
+          <img src="player-photo.png" alt="" />
+        </div>
+        <div class="pct-item">
+          <div class="pct-val">82%</div>
+          <div class="pct-label">FT%</div>
+        </div>
+      </div>
     </div>
 
     <!-- Teams -->
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">Teams</div>
-      </div>
+      <div class="card-head"><div class="card-title">Teams</div></div>
       <div class="team-row">
         <div class="team-icon">⚡</div>
         <div class="team-info">
@@ -595,134 +613,52 @@ body {
           <div class="team-name">Garden City High School</div>
           <div class="team-sub">Varsity Girls Basketball · Captain</div>
         </div>
-        <div class="team-date">2022–Present</div>
+        <div class="team-date">2022–Now</div>
       </div>
-    </div>
-
-    <!-- What I'm Working On -->
-    <div class="card">
-      <div class="card-head">
-        <div class="card-title">What I'm Working On</div>
-      </div>
-      <ul class="working-list">
-        <li><span class="working-dot"></span>Off-hand finishing at the rim and floater development</li>
-        <li><span class="working-dot"></span>3-point consistency off the dribble pull-up (37% → targeting 40%+)</li>
-        <li><span class="working-dot"></span>Pick-and-roll read progression and mid-range off PnR</li>
-        <li><span class="working-dot"></span>Defensive footwork — staying attached on ball screens</li>
-        <li><span class="working-dot"></span>College outreach and campus visits — targeting D1 programs</li>
-      </ul>
     </div>
 
     <!-- Links & Media -->
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">Links &amp; Media</div>
-      </div>
+      <div class="card-head"><div class="card-title">Links &amp; Media</div></div>
       <div class="media-row">
-        <div class="media-icon" style="background:rgba(255,0,0,0.12);border:1px solid rgba(255,0,0,0.2);">▶</div>
-        <div class="media-text">
+        <div class="media-icon" style="background:rgba(255,0,0,0.10);border-color:rgba(255,0,0,0.2);">▶</div>
+        <div>
           <div class="media-name">Highlights on YouTube</div>
           <div class="media-sub"><a href="#" target="_blank">Full Game Highlights — Fall 2024</a></div>
         </div>
       </div>
       <div class="media-row">
-        <div class="media-icon" style="background:rgba(0,204,255,0.10);border:1px solid rgba(0,204,255,0.2);">⚡</div>
-        <div class="media-text">
+        <div class="media-icon" style="background:rgba(0,204,255,0.10);border-color:rgba(0,204,255,0.2);">⚡</div>
+        <div>
           <div class="media-name">Lightning Basketball</div>
-          <div class="media-sub"><a href="https://lightningbasketball.net" target="_blank" rel="noopener">lightningbasketball.net</a> · One of the nation's largest AAU orgs</div>
-        </div>
-      </div>
-      <div class="media-row">
-        <div class="media-icon" style="background:rgba(77,158,255,0.10);border:1px solid rgba(77,158,255,0.2);overflow:hidden;padding:4px;">
-          <img src="brandlete-logo-dark.png" alt="Brandlete" style="height:28px;width:auto;display:block;margin:auto;" />
-        </div>
-        <div class="media-text">
-          <div class="media-name">Brandlete</div>
-          <div class="media-sub">Athlete development, structured. Full profile on <a href="https://brandlete.com" target="_blank" rel="noopener">brandlete.com</a></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /col-left -->
-
-  <!-- Right Column -->
-  <div class="col-right">
-
-    <!-- Current Season -->
-    <div class="card">
-      <div class="card-head">
-        <div class="card-title">Current Season</div>
-        <a href="#" class="card-link">View All</a>
-      </div>
-
-      <div class="season-banner">
-        <div class="season-banner-label">Spring 2025 · Varsity</div>
-        <div class="season-banner-team"><strong>Lightning Basketball</strong> (Girls 16U Gold)</div>
-      </div>
-
-      <div class="big-stats">
-        <div class="big-stat">
-          <div class="big-stat-val">18.3</div>
-          <div class="big-stat-label">PPG</div>
-        </div>
-        <div class="big-stat">
-          <div class="big-stat-val">4.2</div>
-          <div class="big-stat-label">RPG</div>
-        </div>
-        <div class="big-stat">
-          <div class="big-stat-val">6.8</div>
-          <div class="big-stat-label">APG</div>
-        </div>
-      </div>
-
-      <div class="pct-row">
-        <div class="pct-box">
-          <div class="pct-val">43%</div>
-          <div class="pct-label">FG%</div>
-        </div>
-        <div class="pct-box">
-          <div class="pct-val">37%</div>
-          <div class="pct-label">3P%</div>
-        </div>
-        <div class="pct-box">
-          <div class="pct-val">81%</div>
-          <div class="pct-label">FT%</div>
+          <div class="media-sub"><a href="https://lightningbasketball.net" target="_blank" rel="noopener">lightningbasketball.net</a></div>
         </div>
       </div>
     </div>
 
     <!-- Achievements -->
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">Achievements</div>
-      </div>
+      <div class="card-head"><div class="card-title">Achievements</div></div>
       <div class="achv-list">
         <div class="achv-row">
           <div class="achv-icon gold">🏆</div>
-          <div class="achv-text">
+          <div>
             <div class="achv-name">All-Conference (2024)</div>
             <div class="achv-sub">Nassau County Girls Basketball</div>
           </div>
         </div>
         <div class="achv-row">
           <div class="achv-icon cyan">⚡</div>
-          <div class="achv-text">
+          <div>
             <div class="achv-name">AAU Tournament Champion</div>
             <div class="achv-sub">Lightning 16U Gold · Summer 2024</div>
           </div>
         </div>
         <div class="achv-row">
           <div class="achv-icon blue">⭐</div>
-          <div class="achv-text">
+          <div>
             <div class="achv-name">Team Captain</div>
-            <div class="achv-sub">Garden City High School · 2024–25</div>
-          </div>
-        </div>
-        <div class="achv-row">
-          <div class="achv-icon green">📚</div>
-          <div class="achv-text">
-            <div class="achv-name">Academic All-State</div>
-            <div class="achv-sub">NYSPHSAA · GPA 3.85</div>
+            <div class="achv-sub">Garden City HS · 2024–25</div>
           </div>
         </div>
       </div>
@@ -730,11 +666,9 @@ body {
 
     <!-- Contact -->
     <div class="card">
-      <div class="card-head">
-        <div class="card-title">Contact</div>
-      </div>
+      <div class="card-head"><div class="card-title">Contact</div></div>
       <p class="contact-note">
-        Interested in recruiting Amara or learning more about her development? Reach out through Brandlete or Lightning Basketball.
+        Interested in recruiting Amara? Reach out through Brandlete or Lightning Basketball directly.
       </p>
       <a href="mailto:karen@lightningbasketball.net" class="btn btn-success" style="width:100%;justify-content:center;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -747,7 +681,7 @@ body {
 </div><!-- /layout -->
 
 <footer class="footer">
-  © 2024 Brandlete, Inc. · <a href="https://brandlete.com">brandlete.com</a> · <a href="https://brandlete.com/terms.html">Terms of Service</a>
+  © 2024 Brandlete, Inc. &nbsp;·&nbsp; <a href="https://brandlete.com/terms.html">Terms of Service</a>
 </footer>
 
 </body>
